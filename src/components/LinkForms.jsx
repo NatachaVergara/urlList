@@ -17,6 +17,10 @@ const LinkForms = () => {
         setName('')
         setDescription('')
     }
+
+    const noValid = !(url.length && name.length && description.length > 1)
+
+
     return (
 
         <form className="card card-body mt-2" onSubmit={addLink}>
@@ -56,7 +60,9 @@ const LinkForms = () => {
                 </textarea>
             </div>
             <button className="btn btn-outline-warning mt-1"
-                onSubmit={addLink}>Guardar</button>
+                onSubmit={addLink}
+                disabled={noValid}
+            >Guardar</button>
 
 
 
